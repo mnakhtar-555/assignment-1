@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;;
+    font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: block;
+    background-color: #B0C5A4;
+    border: 5px solid #fffeee;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgb( 0 0 0 / 0.3 );
+    padding-top: 20px;
+}
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.contents{
+    padding: 2rem;
+    text-align: left;
+    line-height: 2rem;
+}
+.contents .label,
+.contents h3{ color: #070318; }
+.contents h1{
+    color: #070318;
+    font-size: 1.8rem;
+}
+.contents p{
+    text-align: justify;
+}
+
+@media (min-width: 560px){
+    .container{
+        width: 50%;
+    }
+    .profile-img{
+        margin-top: 10px;
+    }
+}
+@media (min-width: 980px) {
+    .container{
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    width: 70%;
+    align-items: center;
+    padding-top: 0;
+    }
+    .profile-img{
+        width: 250px;
+        height: 250px;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1200px ){
+    .container{
+        width: 60%;
+    }
+}
+
+@media (min-width: 1340px){
+    .container{
+        width: 50%;
+    }
+}
