@@ -1,8 +1,18 @@
 class BankAccount {
+    static accounts = [];
+
     constructor(accountNumber, ownerName, balance) {
+        if (this.isDuplicateAccount(accountNumber)) {
+            throw new Error("Account with the same account number already exists.");
+        }
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = balance;
+        BankAccount.accounts.push(this);
+    }
+
+    isDuplicateAccount(accountNumber) {
+        return BankAccount.accounts.some(account => account.accountNumber === accountNumber );
     }
 
     deposit(amount) {
@@ -29,6 +39,8 @@ class BankAccount {
         console.log(`Balance: $${this.balance}`);
     }
 }
+
+// instances of BankAccount
 const account1 = new BankAccount(1001, "John Doe", 500);
 const account2 = new BankAccount(1002, "Jane Smith", 1000);
 
